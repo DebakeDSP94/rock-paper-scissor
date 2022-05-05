@@ -1,49 +1,203 @@
-.gameHeader {
-    display: flex;
-    justify-content: center;
-    font-size: 48px;
-    color: blue;
-    margin-top: 100px;
-}
-.header-subtext {
-    display: flex;
-    justify-content: center;
-    font-size: 16;
-    color: green;
-}
-p {
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-    color: red;
+* {
+	box-sizing: border-box;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    height: 400px;
-    align-items: center;
-    gap: 150px;
-    border: solid blue;
-    border-radius: 15px;
-    background-color: rgb(111, 172, 209);
+body {
+	background-color: rgb(56, 120, 179);
+	overflow: hidden;
+	height: 100vh;
+	margin: 0;
+	text-align: center;
 }
 
-.rock, .paper, .scissors {
-    display: flex;
-    background-color: rgb(63, 94, 55);
-    padding: 30px;
-    font-size: 32px;
-    border-radius: 10px;
+.screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	transition: margin 0.5s ease-in-out;
 }
 
-.result {
-    display: flex;
-    justify-content: center;
+.game-intro {
+	color: aliceblue;
+	font-size: 30px;
+}
+.start {
+	color: rgb(56, 120, 179);
+	background-color: aliceblue;
+	padding: 10px 10px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
-.score {
-    display: flex;
-    justify-content: center;
+.start:hover {
+	background-color: rgb(56, 120, 179);
+	color: aliceblue;
+}
 
+.start:active {
+	transform: scale(0.98);
+}
+
+.screen.up {
+	margin-top: -100vh;
+}
+
+.banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 12vh;
+	width: 60vw;
+	background-color: aliceblue;
+	color: rgb(56, 120, 179);
+	border-radius: 12px;
+}
+
+.scoreboard {
+	width: 80vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 40px;
+	color: aliceblue;
+	height: 80px;
+}
+
+.game-container {
+	display: flex;
+	justify-content: space-between;
+	width: 1100px;
+	align-items: center;
+	height: 300px;
+}
+.rps-btns-container {
+	display: flex;
+	position: relative;
+	width: 700px;
+	height: 400px;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 14px;
+}
+
+.rock,
+.paper,
+.scissors {
+	color: rgb(56, 120, 179);
+	background-color: aliceblue;
+	height: 300px;
+	width: 200px;
+	border-radius: 12px;
+	font-size: 20px;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.computer-choice {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 300px;
+	width: 200px;
+	background-color: aliceblue;
+	color: rgb(56, 120, 179);
+	border-radius: 12px;
+	font-size: 20px;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+	background-color: rgb(56, 120, 179);
+	color: aliceblue;
+}
+
+.rock:active,
+.paper:active,
+.scissors:active {
+	transform: scale(0.98);
+}
+
+.rock img {
+	width: 150px;
+	height: 150px;
+}
+
+.paper img {
+	width: 150px;
+	height: 150px;
+}
+
+.scissors img {
+	width: 150px;
+	height: 150px;
+}
+
+.computer-choice img {
+	width: 150px;
+	height: 150px;
+}
+
+.outcome {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	color: aliceblue;
+	font-size: 24px;
+	padding: 20px;
+}
+.final-screen {
+	color: aliceblue;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.button-container {
+	display: flex;
+	justify-content: center;
+	height: 40px;
+	margin: 20px 0px;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
+.new-game {
+	background-color: aliceblue;
+	color: rgb(56, 120, 179);
+	padding: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.new-game:hover {
+	background-color: rgb(56, 120, 179);
+	color: aliceblue;
+}
+
+.new-game:active {
+	transform: scale(0.98);
+}
+
+.replay {
+	background-color: aliceblue;
+	color: rgb(56, 120, 179);
+	border-radius: 8px;
+	padding: 10px 10px;
+	cursor: pointer;
+}
+
+.replay:hover {
+	background-color: rgb(56, 120, 179);
+	color: aliceblue;
+}
+
+.replay:active {
+	transform: scale(0.98);
 }

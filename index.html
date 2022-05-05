@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Rock Paper Scissors</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
-        <script src="app.js"></script>
-    </head>
-    <body>
-        
-    </body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="app.js" defer></script>
+		<title>Rock Paper Scissor</title>
+	</head>
+	<body>
+		<div class="screen game-intro">
+			<h1 class="game-intro">Rock Paper Scissors</h1>
+			<p>Press button to start the game.</p>
+			<button class="start" id="start">Start Game</button>
+		</div>
+		<div class="screen container" id="container">
+			<div class="banner" id="banner">
+				<h1>Rock Paper Scissors</h1>
+			</div>
+			<div class="scoreboard" id="scoreboard">
+				<h3 class="human-score" id="human-score">Human Score: 0</h3>
+				<h3 class="round-counter" id="round-counter">Round: 0</h3>
+				<h3 class="computer-score" id="computer-score">Computer Score: 0</h3>
+			</div>
+			<div class="game-container">
+				<div class="rps-btns-container" id="rps-btns">
+					<button class="rps rock" id="rock">
+						<p>Rock</p>
+						<img src="./images/rock.jpg" alt="rock" />
+					</button>
+					<button class="rps paper" id="paper">
+						<p>Paper</p>
+						<img src="./images/paper.jpg" alt="paper" />
+					</button>
+					<button class="rps scissors" id="scissors">
+						<p>Scissors</p>
+						<img src="./images/scissors.jpg" alt="scissors" />
+					</button>
+				</div>
+				<div class="computer-choice" id="computer-choice">
+					<p>Computer Choice</p>
+					<img src="./images/Question.jpg" alt="question" />
+				</div>
+			</div>
+			<div class="outcome" id="outcome">
+				<p>Round Result:</p>
+			</div>
+			<div class="button-container">
+				<button class="new-game" id="new-game">Start Game?</button>
+			</div>
+		</div>
+		<div class="final-screen screen">
+			<div class="game-result" id="game-result">
+				<p>Game result:</p>
+			</div>
+			<div class="button-container">
+				<button class="replay" id="replay">Play Again?</button>
+			</div>
+		</div>
+	</body>
 </html>
