@@ -35,11 +35,11 @@ function startNewGame() {
 	round = 0;
 	humanScore = 0;
 	puterScore = 0;
-	round = 0;
 	setEventListeners();
 	roundResult.innerText = `Pick rock, paper or scissors!`;
 	scoreUpdate();
 	newGameBtn.innerText = `New Game?`;
+	compChoice.innerHTML = '<img src="./images/Question.jpg" alt="question" />';
 }
 
 function setEventListeners() {
@@ -68,7 +68,7 @@ function playGameTurn(humanChoice) {
 	game(humanChoice, puterChoice);
 	compChoice.innerHTML = `
 	<p>Computer Choice</p>
-	<img src="./images/${puterChoice}.jpg" alt="question" />
+	<img src="./images/${puterChoice}.jpg" alt="${puterChoice}" />
 	<p>${puterChoice}</p>`;
 }
 
@@ -89,33 +89,31 @@ function game(humanChoice, puterChoice) {
 
 	if (humanChoice === puterChoice) {
 		roundResult.innerText = `This round is a tie! You both chose ${humanChoice}!`;
-		scoreUpdate(humanScore, puterScore);
+		scoreUpdate();
 	} else if (humanChoice === 'rock' && puterChoice === 'paper') {
 		roundResult.innerText = 'You lose this round: Paper covers Rock!';
 		puterScore++;
-		scoreUpdate(humanScore, puterScore);
+		scoreUpdate();
 	} else if (humanChoice === 'rock' && puterChoice === 'scissors') {
 		roundResult.innerText = 'You win this round: Rock crushes Scissors!';
 		humanScore++;
-		scoreUpdate(humanScore, puterScore);
+		scoreUpdate();
 	} else if (humanChoice === 'paper' && puterChoice === 'scissors') {
 		roundResult.innerText = 'You lose this round: Scissors cut Paper!';
 		puterScore++;
-		scoreUpdate(humanScore, puterScore);
+		scoreUpdate();
 	} else if (humanChoice === 'paper' && puterChoice === 'rock') {
 		roundResult.innerText = 'You win this round: Paper covers Rock!';
 		humanScore++;
-		scoreUpdate(humanScore, puterScore);
+		scoreUpdate();
 	} else if (humanChoice === 'scissors' && puterChoice === 'rock') {
 		roundResult.innerText = 'You lose this round: Rock crushes Scissors!';
 		puterScore++;
-		scoreUpdate(humanScore, puterScore);
+		scoreUpdate();
 	} else if (humanChoice === 'scissors' && puterChoice === 'paper') {
 		roundResult.innerText = 'You win this round: Scissors cut Paper!';
 		humanScore++;
-		scoreUpdate(humanScore, puterScore);
-	} else {
-		return;
+		scoreUpdate();
 	}
 }
 
@@ -129,12 +127,8 @@ function scoreUpdate() {
 function checkForWin() {
 	if (puterScore === 5) {
 		computerWon();
-		return;
 	} else if (humanScore === 5) {
 		humanWon();
-		return;
-	} else {
-		return;
 	}
 }
 
